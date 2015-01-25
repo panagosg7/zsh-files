@@ -3,7 +3,8 @@
 #
 
 #  Add the ~/bin/ directory for all users
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/.root/bin/
 
 #
 # OS Specific Paths
@@ -55,8 +56,7 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
     if [[ $USER == 'pvekris' ]]; then
         # Home Linux
         #
-        export PATH=$PATH:~/.cabal/bin
-        export PATH=$PATH:~/.root/bin/
+        #
     fi
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     #
