@@ -41,17 +41,6 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
     # Add Java jars (like checkstyle, etc)
     export PATH=$PATH:~/jars
 elif [[ $CURRENT_OS == 'Linux' ]]; then
-    # Prefix /usr/local/bin for brew if it exists
-    if hash brew 2>/dev/null; then
-        export PATH="$HOME/.linuxbrew/bin:$PATH"
-        export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-    fi
-
-    #  Add the bin/Arch directory
-    export PATH=$PATH:~/bin/Arch
-    export PATH=$PATH:~/bin/appengine
-    export PATH=$PATH:~/.cabal/bin
-    export PATH=$PATH:~/bin/
 
     # CentOS Paths
     if [[ $DISTRO == 'CentOS' ]]; then
@@ -63,17 +52,11 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
     # User Specific Aliases
     #
 
-    if [[ $USER == 'davis' ]]; then
+    if [[ $USER == 'pvekris' ]]; then
         # Home Linux
-    elif [[ $USER == 'davisjos' ]]; then
-        # Work Linux
-
-        # Android SDK Tools
-        export PATH=$PATH:~/Programming/SDKs/tools
-        # Android SDK Platform Tools
-        export PATH=$PATH:~/Programming/SDKs/platform-tools
-        # Jars
-        export PATH=$PATH:~/jars
+        #
+        export PATH=$PATH:~/.cabal/bin
+        export PATH=$PATH:~/.root/bin/
     fi
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     #
