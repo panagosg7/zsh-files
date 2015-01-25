@@ -160,6 +160,9 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
         alias goto='ssh goto.ucsd.edu'
         alias syno='ssh pvekris.synology.me'
         alias synoroot='ssh root@pvekris.synology.me'
+
+        alias mountdl='sudo mount -t vboxsf Downloads /home/pvekris/Downloads'
+
     
     fi
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then

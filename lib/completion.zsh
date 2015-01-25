@@ -1,14 +1,19 @@
 # fixme - the load process here seems a bit bizarre
+#
+autoload -U compinit
+compinit
+zmodload -i zsh/complist
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
+setopt list_ambiguous
+setopt complete_aliases
 
 WORDCHARS=''
 
-zmodload -i zsh/complist
 
 ## case-insensitive (all),partial-word and then substring completion
 if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
