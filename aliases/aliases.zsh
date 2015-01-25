@@ -3,9 +3,25 @@
 #
 
 # Builtin aliases
-alias ll='ls -l'
-alias la='ls -a'
 alias lla='ls -al'
+alias ls='ls -G --color'
+alias ll='ls -lha'
+alias la='ls -ha'
+alias lc='ls --color=never'
+#alias rs='ls -rhsS'
+alias l='ls -lh'
+#alias s='ls -sh'
+#alias 1='ls -1'
+
+alias d='df -h'
+
+alias 'grep=grep --colour'
+
+# some useful aliases
+alias md='mkdir -p'
+alias rmd='rmdir'
+alias hist='cat ~/.zsh_history | grep '
+alias wgetr='wget -r --no-parent --reject "index.html*"'
 
 # Some cd aliases
 alias back='cd -'
@@ -29,7 +45,10 @@ alias -g T=' | tail -20'
 alias -g NUL=' > /dev/null 2>&1'
 
 # I like to be safe...
-alias rm='rm -i'
+# Prompts for confirmation after 'rm *' etc
+# Helps avoid mistakes like 'rm * o' when 'rm *.o' was intended
+#setopt RM_STAR_WAIT
+alias 'rm *'='rm -i *'
 
 # derp derp
 alias mkdirp='mkdir -p'
@@ -43,6 +62,17 @@ alias gP='git push'
 # Racket: load Readline
 alias racketrl='racket -il readline'
 
+# less with color
+alias vless='vim -u /usr/share/vim/vim73/macros/less.vim'
+
+# p is aliased to $PWD
+alias p=pwd
+
+#List only driectories
+alias lsd='ls -l | grep "^d"'
+
+#Json nice viewer
+alias pp='python -mjson.tool'
 
 #
 # OS Specific Aliases
@@ -78,6 +108,7 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
 
     # Open from command line
     alias finder='open -a Finder '
+    
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     #
     # Global Linux
@@ -105,27 +136,31 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
     # Source Extensions
     alias -s hs=$EDITOR
     alias -s c=$EDITOR
+    
+    # Apt-get
+    # No need for apt-get install in there, zsh completion handles apt-get real good ;)
+    alias apt='aptitude'
+    alias apts='aptitude search'
+    alias aptc='apt-cache search'
+    alias aptf='apt-file search'
+    alias show='apt-cache show'
+    alias dbuild='dpkg-buildpackage -uc -B -rfakeroot'
+    alias di='dpkg -i'
 
     #
     # User Specific Aliases
     #
 
-    if [[ $USER == 'davis' ]]; then
-        # Monitors
-        # Moved to a separate script in ~/Scripts
-        # alias vga='xrandr --output CRT1 --same-as LCD --auto'
-        # alias dual-monitors='xrandr --output CRT1 --right-of LCD --mode 1660x1050'
-
-        # Music Collection
-        alias music-update='chmod -R a+X /home/davis/Music/Artists'
-
-        # Hahah, that's what it looks like to me
-        alias yogurt='yaourt'
-    elif [[ $USER == 'davisjos' ]]; then
-        export ECLIPSE_HOME=/opt/eclipse/
-        alias eclimd=$ECLIPSE_HOME/eclimd
-        alias eclimd-rhel='$ECLIPSE_HOME/eclimd -Dosgi.instance.area.default=@user.home/Programming/RHEL/workspace'
-        alias eclimd-samples='$ECLIPSE_HOME/eclimd -Dosgi.instance.area.default=@user.home/Programming/Samples'
+    if [[ $USER == 'pvekris' ]]; then
+    
+        #URL aliases
+        alias greedy='ssh greedy.softlab.ntua.gr'
+        alias xgreedy='ssh -X greedy.softlab.ntua.gr'
+        alias godel='ssh godel.ucsd.edu'
+        alias goto='ssh goto.ucsd.edu'
+        alias syno='ssh pvekris.synology.me'
+        alias synoroot='ssh root@pvekris.synology.me'
+    
     fi
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     alias py='/cygdrive/c/Python27/python'
