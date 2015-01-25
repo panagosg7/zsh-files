@@ -20,7 +20,6 @@ alias 'grep=grep --colour'
 # some useful aliases
 alias md='mkdir -p'
 alias rmd='rmdir'
-alias hist='cat ~/.zsh_history | grep '
 alias wgetr='wget -r --no-parent --reject "index.html*"'
 
 # Some cd aliases
