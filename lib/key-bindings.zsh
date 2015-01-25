@@ -47,6 +47,10 @@ bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move
 bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 bindkey ";5D"     backward-word
 bindkey ";5C"     forward-word
+
+bindkey "${terminfo[khome]}"  beginning-of-line 
+bindkey "${terminfo[kend]}"   end-of-line 
+
 export WORDCHARS=''
 
 if [[ "${terminfo[kcbt]}" != "" ]]; then
