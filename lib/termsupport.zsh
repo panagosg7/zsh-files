@@ -36,3 +36,9 @@ function omz_termsupport_preexec {
 
 precmd_functions+=(omz_termsupport_precmd)
 preexec_functions+=(omz_termsupport_preexec)
+
+# Don’t write over existing files with >, use >! instead
+setopt NOCLOBBER
+
+# Don’t nice background processes
+setopt NO_BG_NICE
