@@ -3,8 +3,8 @@
 #
 
 #  Add the ~/bin/ directory for all users
-export PATH=$PATH:~/.cabal/bin
-export PATH=$PATH:~/.root/bin/
+export PATH=~/.cabal/bin:$PATH
+export PATH=~/.root/bin/:$PATH
 
 #
 # OS Specific Paths
