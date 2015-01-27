@@ -2,6 +2,9 @@
 # Env Variables
 #
 
+# Dynamic colors
+source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
+
 #
 # OS Specific Env Variables
 #

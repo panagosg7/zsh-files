@@ -6,6 +6,10 @@
 export PATH=~/.cabal/bin:$PATH
 export PATH=~/.root/bin/:$PATH
 
+if [[ $USER == 'pvekris' ]]; then
+    export PATH=$PATH:$HOME/.dynamic-colors/bin
+fi
+
 #
 # OS Specific Paths
 #
