@@ -8,6 +8,8 @@ export PATH=~/.root/bin/:$PATH
 
 if [[ $USER == 'pvekris' ]]; then
     export PATH=$PATH:$HOME/.dynamic-colors/bin
+    
+    export PATH=$PATH:$HOME/.xmonad/bin
 fi
 
 #
